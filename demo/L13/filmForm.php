@@ -11,8 +11,8 @@
     </head>
     <body>
         <form class="FormSansBR" action="filmAdd.php" method="GET">
-            <input type="text" name="titre" placeholder="titre">
-            <input type="number" name="annee" placeholder="annee">
+            <input type="text" name="titre" placeholder="titre" required>
+            <input type="number" name="annee" placeholder="annee" required>
             <input type="text" name="description" placeholder="description">
             <input type="submit" value="Submit">
         </form>
