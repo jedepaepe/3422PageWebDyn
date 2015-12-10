@@ -1,7 +1,10 @@
 <?php
-$titre = $_REQUEST['titre'];
-$annee = $_REQUEST['annee'];
-$description = $_REQUEST['description'];
+//$titre = $_REQUEST['titre'];
+$titre = filter_input(INPUT_GET, 'titre', FILTER_SANITIZE_STRING);
+//$annee = $_REQUEST['annee'];
+$annee = filter_input(INPUT_GET, 'annee', FILTER_SANITIZE_NUMBER_INT);
+//$description = $_REQUEST['description'];
+$description = filter_input(INPUT_GET, 'description', FILTER_SANITIZE_STRING);
 $pdo = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
 $reponse = $pdo->query("INSERT INTO film (id, titre, annee, description) "
         . "VALUES (NULL, \"$titre\", \"$annee\", \"$description\")");
